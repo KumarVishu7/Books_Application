@@ -2,6 +2,7 @@ package com.Bookstore.Bookstore.Controller;
 
 import com.Bookstore.Bookstore.Entities.Book;
 import com.Bookstore.Bookstore.Service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,7 +11,8 @@ import java.util.List;
 @RequestMapping("/books")
 public class BookController {
 
-    private final BookService bookService;
+    @Autowired
+    private BookService bookService;
 
     public BookController(BookService bookService) {
         this.bookService = bookService;

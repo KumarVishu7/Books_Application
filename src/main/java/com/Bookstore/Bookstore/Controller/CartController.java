@@ -2,6 +2,7 @@ package com.Bookstore.Bookstore.Controller;
 
 import com.Bookstore.Bookstore.Entities.Cart;
 import com.Bookstore.Bookstore.Service.CartService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,7 +11,8 @@ import java.util.List;
 @RequestMapping("/cart")
 public class CartController {
 
-    private final CartService cartService;
+    @Autowired
+    private  CartService cartService;
 
     public CartController(CartService cartService) {
         this.cartService = cartService;

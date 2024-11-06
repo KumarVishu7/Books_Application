@@ -2,6 +2,7 @@ package com.Bookstore.Bookstore.Service;
 
 import com.Bookstore.Bookstore.Entities.Orders;
 import com.Bookstore.Bookstore.Repo.OrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
@@ -9,7 +10,8 @@ import java.util.List;
 @Service
 public class OrderService {
 
-    private final OrderRepository orderRepository;
+    @Autowired
+    private  OrderRepository orderRepository;
 
     public OrderService(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
